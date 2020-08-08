@@ -18,3 +18,6 @@ def teacher_login(request):
         form = AuthenticationForm()
     return render(request, 'teachers/login.html', { 'form': form })
     # return HttpResponse("teacher login")
+
+def create_student(request):
+    
