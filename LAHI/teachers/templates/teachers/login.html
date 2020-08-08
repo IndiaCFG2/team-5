@@ -1,0 +1,9 @@
+
+
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" value="Login">Submit</button>
+	</form>
+{% endblock %}
