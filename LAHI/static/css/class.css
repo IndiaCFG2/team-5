@@ -108,10 +108,52 @@ label {
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
-input:invalid {
+input {
+  margin-left: 25%;
+  line-height: normal;
+}
+
+input[type=file] {
+  display: block;
+  margin-left: 25%;
+}
+
+.class-parent {
+  position:relative;
+height: 400;
+/* background-color: wheat; */
+  position: relative;
+  box-shadow: 5px 10px gainsboro;
+  /* height: auto;
+  width: auto; */
+  /* background-color: blueviolet; */
+  text-align: center;
+  margin-top: 50;
+  margin-bottom: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.class-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .myCtn
+{
+    box-shadow: 5px 10px gainsboro;
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+} */
+
+/* input:invalid {
     border: 2px solid red;
-  }
+  } */
   
-  input:invalid:required {
+  /* input:invalid:required {
     background-image: linear-gradient(to right,white, white);
-  }
+  } */
