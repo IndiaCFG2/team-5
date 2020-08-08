@@ -16,12 +16,24 @@ class Standard(models.Model):
     def __str__(self):
         return str(self.standard)
 
-class MediaFile(models.Model):
-    subject = models.CharField(max_length=100)
-    title = models.CharField(max_length=200)
+class Subject(models.Model):
+    sub = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.sub
+
+class FileType(models.Model):
     file_type = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.file_type
+
+class MediaFile(models.Model):
+    std = models.ForeignKey(Standard, default=None, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, default=None, on_delete=models.CASCADE)
+    file_type = models.ForeignKey(FileType, default=None, on_delete=models.DO_NOTHING)
     media = models.FileField(upload_to='', null=True, verbose_name="")
 
     def __str__(self):
-        return self.title
+        return str(self.media)
 

@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.http import HttpResponse
 from .forms import *
+from main.models import MediaFile
 
 def teacher_login(request):
     if request.method == 'POST':
@@ -29,5 +30,9 @@ def upload_files(request):
     else:
         form = MediaForm()
     return render(request, 'teachers/uploadfiles.html', {'form':form})
+
+def materials(request):
+    media = MediaFile.objects.all()
+    return render(request, 'teachers/content.html', {'media':media})
     
 

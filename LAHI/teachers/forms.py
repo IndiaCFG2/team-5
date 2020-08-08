@@ -21,5 +21,5 @@ class NewStudentForm(UserCreationForm):
 class MediaForm(forms.ModelForm):
     class Meta:
         model= MediaFile
-        fields= ["subject", "title", "file_type", "media"]
+        fields= ["std", "subject", "file_type", "media"]
 
