@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.http import HttpResponse
 from .forms import *
-from main.models import MediaFile
+from main.models import MediaFile, Standard
 
 def teacher_login(request):
     if request.method == 'POST':
@@ -36,34 +36,23 @@ def materials(request):
     return render(request, 'teachers/content.html', {'media':media})
 
 def create_student(request):
+    # return HttpResponse("hello there")
     if request.method == 'POST':
         if request.POST['pass'] == request.POST['passagain']:
             try:
                 user = User.objects.get(username=request.POST['uname'])
                 roll_no = Student.objects.get(roll_no=request.POST['roll_no'])
                 return render(request, 'teachers/createstudent.html', {'error':"User already exist!"})
-            except:
+            except User.DoesNotExist or Student.DoesNotExist:
                 roll_no = request.POST['rollno']
                 phone = request.POST['phone']
+                std = Standard.objects.get(standard=request.POST['std'])
                 user = User.objects.create_user(username=request.POST['uname'], password=request.POST['pass'])
-                student = Student(user=user, roll_no=roll_no, phone=phone)
+                student = Student(user=user, roll_no=roll_no, phone=phone, std=std)
+                student.save()
                 return HttpResponse("user created")
         else:
             return render(request, 'teachers/createstudent.html', {'error':"Password doesn't match"})
-    else:
-        render(request, 'teacher/createstudent.html')
-
-
-
-
-    # if request.method == 'POST':
-    #     form = NewStudentForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         return HttpResponse('Student created')
-    # else:
-    #     form = NewStudentForm()
-    # return render(request, 'teachers/createstudent.html', {'form':form})
-
     
-
+    return render(request, 'teachers/createstudent.html')
+        # return HttpResponse("create a new user")
