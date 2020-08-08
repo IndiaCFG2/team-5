@@ -37,13 +37,33 @@ def materials(request):
 
 def create_student(request):
     if request.method == 'POST':
-        form = NewStudentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponse('Student created')
+        if request.POST['pass'] == request.POST['passagain']:
+            try:
+                user = User.objects.get(username=request.POST['uname'])
+                roll_no = Student.objects.get(roll_no=request.POST['roll_no'])
+                return render(request, 'teachers/createstudent.html', {'error':"User already exist!"})
+            except:
+                roll_no = request.POST['rollno']
+                phone = request.POST['phone']
+                user = User.objects.create_user(username=request.POST['uname'], password=request.POST['pass'])
+                student = Student(user=user, roll_no=roll_no, phone=phone)
+                return HttpResponse("user created")
+        else:
+            return render(request, 'teachers/createstudent.html', {'error':"Password doesn't match"})
     else:
-        form = NewStudentForm()
-    return render(request, 'teachers/createstudent.html', {'form':form})
+        render(request, 'teacher/createstudent.html')
+
+
+
+
+    # if request.method == 'POST':
+    #     form = NewStudentForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return HttpResponse('Student created')
+    # else:
+    #     form = NewStudentForm()
+    # return render(request, 'teachers/createstudent.html', {'form':form})
 
     
 
