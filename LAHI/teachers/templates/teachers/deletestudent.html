@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="text-center mt-3">Delete Student</h2>
+        <form method="post" >
+            <div class="form-group">
+                <!-- {% csrf_token %}
+                {{ form.as_p }} -->
+              </div>
+            <button type="submit" class="btn btn-primary"> Delete Student </button>
+          </form>
+        
+         
+        <!-- <h5>Delete Student</h5>
+        <form method="post" >
+            <div class="form-group">
+                <div class="form-group">
+                    <select class="form-control" id="student" name = "student">
+                        {% for student in student_list %}
+                        <option>{{ student.name }}</option>
+                        {% endfor %} 
+                    </select>
+                  </div>
+              </div>
+            <button type="submit" class="btn btn-primary"> Delete Student </button>
+          </form> -->
+    </div>
+  </div>
+    
+{% endblock %}
