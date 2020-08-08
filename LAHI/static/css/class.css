@@ -140,6 +140,15 @@ height: 400;
   transform: translate(-50%, -50%);
 }
 
+select {
+  text-transform: none;
+  margin-bottom: 50px;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+}
+
+
 .list-group {
   margin-right: 20%;
     margin-left: 20%;
