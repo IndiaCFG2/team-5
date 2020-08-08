@@ -86,15 +86,19 @@
             <form action="class.html" method="post" >
                 <div class="form-group">
                     <label for="student_name">Student Name</label>
-                    <input type="text" class="form-control" id="student_name" name = "student_name" >
+                    <input type="text" class="form-control" id="student_name" name = "student_name" required >
                   </div>
                   <div class="form-group">
                     <label for="roll_no">Roll No</label>
-                    <input type="text" class="form-control" id="roll_no" name = "roll_no" >
+                    <input type="text" class="form-control" id="roll_no" name = "roll_no" required>
                   </div>
                   <div class="form-group">
                     <label for="mobile">Mobile</label>
-                    <input type="text" class="form-control" id="Mobile" name = "mobile" >
+                    <input type="text" class="form-control" id="Mobile" name = "mobile" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="PassWord">Password</label>
+                    <input type="text" class="form-control" id="PassWord" name = "Password" required >
                   </div>
                 <button type="submit" class="btn btn-primary"> Add Student </button>
               </form>
@@ -140,11 +144,11 @@
             <form action = "weekly_agenda.html" method="post" >
                 <div class="form-group">
                     <label for="class">Class</label>
-                    <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
+                    <input type="text" class="form-control" id="class" name = "class" placeholder="7" required>
                   </div>
                 <div class="form-group">
                     <label for="Subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
+                    <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math" required>
                 </div>
                 <button type="submit" class="btn btn-primary"> Manage Weekly Agenda </button>
             </form>
@@ -174,19 +178,19 @@
                 <form action = "class.html" method="post" >
                     <div class="form-group">
                         <label for="class">Class</label>
-                        <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
+                        <input type="text" class="form-control" id="class" name = "class" placeholder="7" required>
                       </div>
                     <div class="form-group">
                         <label for="Subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
+                        <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math" required>
                     </div>
                     <div class="form-group">
                         <label for="Topic">Topic</label>
-                        <input type="text" class="form-control" id="topic" name = "topic" placeholder="Algebra">
+                        <input type="text" class="form-control" id="topic" name = "topic" placeholder="Algebra" required>
                       </div>
                     <div class="form-group">
                       <label for="file">Select file</label>
-                      <input type="file" class="form-control-file" id="file" name = "file">
+                      <input type="file" class="form-control-file" id="file" name = "file" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Upload Content</button>
                   </form>
@@ -215,15 +219,15 @@
                 <form action = "class.html" method="post" >
                     <div class="form-group">
                         <label for="class">Class</label>
-                        <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
+                        <input type="text" class="form-control" id="class" name = "class" placeholder="7" required>
                       </div>
                     <div class="form-group">
                         <label for="Subject">Subject</label>
-                        <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
+                        <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math" required>
                     </div>
                     <div class="form-group">
                       <label for="file">Select file(.pdf or .docs)</label>
-                      <input type="file" class="form-control-file" id="file" name = "file">
+                      <input type="file" class="form-control-file" id="file" name = "file" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Upload Assignments</button>
                 </form>
