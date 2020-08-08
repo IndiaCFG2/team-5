@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <title>Teacher Dashboard</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" href="css/styles.css"> -->
+        <link rel="stylesheet" href="css/teacher_dashboard.css">
     </head>
     <body>
         <nav class="navbar navbar-light bg-primary">
@@ -23,17 +23,22 @@
 
 
         
-          
-          <ul class="list-inline">
-            {% for class in class_list %}
-            <!-- <a class="nav-link" href="class.html">{{ class }}</a> -->
-            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='class.html';">{{ class }}</button>
-            <!-- <div class="btn-group btn-group-lg" role="group" aria-label="...">Right</div> -->
-            <!-- <li class="list-inline-item"><button type="button" class="btn btn-outline-primary">{{ class }}</button> -->
-            <!-- </li> -->
-            <!-- <li>{{ athlete.name }}</li> -->
-            {% endfor %}
-          </ul>
+        <div class = "class-parent">
+          <div class="class-child">
+            <ul class="list-inline">
+                {% for class in class_list %}
+                <!-- <a class="nav-link" href="class.html">{{ class }}</a> -->
+                <button type="button" class="btn btn-primary btn-lg" onclick="location.href='class.html';">{{ class }}</button>
+                <!-- <div class="btn-group btn-group-lg" role="group" aria-label="...">Right</div> -->
+                <!-- <li class="list-inline-item"><button type="button" class="btn btn-outline-primary">{{ class }}</button> -->
+                <!-- </li> -->
+                <!-- <li>{{ athlete.name }}</li> -->
+                {% endfor %}
+              </ul>
+              
+          </div>
+        </div>  
+         
 
 
 
