@@ -1,0 +1,104 @@
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.myCtn
+{
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.card-body
+{
+    box-shadow: 0 3px 5px gray;
+}
+
+.my_form-control
+{
+    width: 100%;
+    padding: 8px;
+    padding-top: 18px;
+    border: none;
+    border-bottom: 1pt solid #bfbfbf;
+    transition: all 200ms ease-in-out;
+}
+
+.form-group
+{
+    position: relative;
+}
+
+label
+{
+    
+    width: 100%;
+}
+
+.my_place
+{
+    position: absolute;
+    pointer-events: none;
+    top: 25px;
+    left: 5px;
+    color: #0073ff;
+    transition:  0.2s ease all;
+    
+
+}
+
+.my_form-control:focus
+{
+    width: 100%;
+    padding: 8px;
+    padding-top: 18px;
+    border: none;
+    border-bottom: 2px solid #0073ff;
+    outline: none;
+}
+
+
+
+
+input:focus ~ .my_place,
+input:not(:focus):valid ~ .my_place
+{
+    top: -6px;
+}
+
+
+
+.btn
+{
+    border-radius: 25px;
+    box-shadow: 0 3px 4px #8abfff;
+    background-image: linear-gradient(to right, #79a1ff, #1352e6, #79a1ff);
+    background-size: 200%;
+    width: 250px;
+    border: none;
+    outline: none;
+    transition: .2s ease-in-out;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn:hover
+{
+    background-position: right;
+}
+
+
+
+.btn:focus, .btn:active, .btn:active:focus {
+    outline: none !important;
+    box-shadow: 0 3px 4px #8abfff !important;
+  }
+
+  .forgot
+  {
+      font-size: 12px;
+      color: #0073ff;
+      cursor: pointer;
+  }

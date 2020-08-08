@@ -1,0 +1,28 @@
+{% load static %}
+
+<head>
+        <meta charset="utf-8">
+        <title>Djangonauts</title>
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+{% block content %}
+<body>
+<div class="container myCtn">
+	<div class="card">
+		<div class="card-body">
+			<div class="col-md-12">
+				<h2 class="text-center mt-3">Sign in</h2>
+					<form method="POST" class="main-form needs-validation" id="contact-form">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<button type="submit" value="Login" class="btn btn-primary mt-3 mx-auto">Submit</button>
+					</form>
+			</div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
