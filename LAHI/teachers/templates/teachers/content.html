@@ -1,17 +1,7 @@
-{% load static %}
-
-<head>
-        <meta charset="utf-8">
-        <title>Djangonauts</title>
-		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
+{% extends 'base.html' %}
 
 {% block content %}
-<body>
-<div class="container myCtn">
+
 	{{ media }}
-</div>
-</body>
+
 {% endblock %}

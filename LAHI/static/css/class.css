@@ -107,3 +107,11 @@ label {
     background-color: aliceblue;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
+
+input:invalid {
+    border: 2px solid red;
+  }
+  
+  input:invalid:required {
+    background-image: linear-gradient(to right,white, white);
+  }
