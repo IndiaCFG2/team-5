@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.http import HttpResponse
+from .forms import *
 
 def teacher_login(request):
     if request.method == 'POST':
@@ -18,4 +19,15 @@ def teacher_login(request):
         form = AuthenticationForm()
     return render(request, 'teachers/login.html', { 'form': form })
     # return HttpResponse("teacher login")
+
+def upload_files(request):
+    if request.method == 'POST':
+        form = MediaForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('File uploaded successfuly')
+    else:
+        form = MediaForm()
+    return render(request, 'teachers/uploadfiles.html', {'form':form})
+    
 

@@ -5,5 +5,6 @@ app_name = 'teachers'
 
 urlpatterns = [
 	path('login', views.teacher_login, name='teacher_login'),
+	path('uploadfiles', views.upload_files, name='upload_files'),
     
 ]

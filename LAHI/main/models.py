@@ -17,6 +17,7 @@ class Standard(models.Model):
         return str(self.standard)
 
 class MediaFile(models.Model):
+    subject = models.CharField(max_length=100)
     title = models.CharField(max_length=200)
     file_type = models.CharField(max_length=10)
     media = models.FileField(upload_to='', null=True, verbose_name="")
