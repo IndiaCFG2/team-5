@@ -2,24 +2,18 @@
 
 {% block content %}
 
-
-<body>
-	<div class="container myCtn">
-		<div class="card">
-			<div class="card-body">
-				<div class="col-md-12">
-					<h2 class="text-center mt-3">Add Student</h2>
-                    <form method="post" >
-                        <div class="form-group">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                        </div>
-                        <button type="submit" class="btn btn-primary"> Add Student </button>
-                    </form>
-				</div>
-			</div>
-		</div>
-	</div>
-	</body>
+    {% if error %}
+    {{error}}
+    {% endif %}
+    <form action="{% url 'teachers:create_student' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="uname" placeholder="Username">
+        <input type="password" name="pass" placeholder="Password">
+        <input type="password" name="passagain" placeholder="confirm Password">
+        <input type="number" name="rollno" placeholder="Roll number">
+        <input type="number" name="phone" placeholder="Phone">
+        <input type="text" name="std" placeholder="Class">
+        <button type="submit">Submit</button>
+    </form>
     
 {% endblock %}

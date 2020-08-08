@@ -7,10 +7,10 @@ from .models import Student
 
 class NewStudentForm(forms.ModelForm):
 	# email = forms.EmailField(required=True)
-    
-	class Meta:
-		model = Student
-		fields = ['name', 'roll_no', 'phone', 'std']
+    pass
+	# class Meta:
+	# 	model = Student
+	# 	fields = ['name', 'roll_no', 'phone', 'std']
 
 	# def save(self, commit=True):
 	# 	user = super(NewStudentForm, self).save(commit=False)
