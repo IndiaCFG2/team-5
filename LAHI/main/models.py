@@ -1,20 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-
-class Teacher(models.Model):
-    name = models.ForeignKey(User, on_delete=models.CASCADE)
-    subject = models.CharField(max_length=100)
-
-    # def __str__(self):
-    #     return self.name
-
-class Standard(models.Model):
-    standard = models.IntegerField()
-    teacher = models.ManyToManyField(Teacher)
-
-    def __str__(self):
-        return str(self.standard)
+# from phone_field import PhoneField
 
 class Subject(models.Model):
     sub = models.CharField(max_length=100)
@@ -27,6 +13,21 @@ class FileType(models.Model):
 
     def __str__(self):
         return self.file_type
+
+class Teacher(models.Model):
+    user = models.OneToOneField(User, default=None, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, default=None, on_delete=models.DO_NOTHING)
+    phone = models.CharField(max_length=15)
+
+    def __str__(self):
+        return str(self.user)
+
+class Standard(models.Model):
+    standard = models.IntegerField()
+    teacher = models.ManyToManyField(Teacher)
+
+    def __str__(self):
+        return str(self.standard)
 
 class MediaFile(models.Model):
     std = models.ForeignKey(Standard, default=None, on_delete=models.CASCADE)

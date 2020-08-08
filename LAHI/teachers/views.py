@@ -34,5 +34,16 @@ def upload_files(request):
 def materials(request):
     media = MediaFile.objects.all()
     return render(request, 'teachers/content.html', {'media':media})
+
+def create_student(request):
+    if request.method == 'POST':
+        form = NewStudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Student created')
+    else:
+        form = NewStudentForm()
+    return render(request, 'teachers/createstudent.html', {'form':form})
+
     
 
