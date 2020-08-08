@@ -140,6 +140,19 @@ height: 400;
   transform: translate(-50%, -50%);
 }
 
+.list-group {
+  margin-right: 20%;
+    margin-left: 20%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: .25rem;
+  margin-top: 10%;
+}
+
 /* .myCtn
 {
     box-shadow: 5px 10px gainsboro;

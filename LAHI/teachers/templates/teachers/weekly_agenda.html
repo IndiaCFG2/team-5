@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<body>
+	<div class="container myCtn">
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-12">
+					<h2 class="text-center mt-3">Manage Weekly Agenda</h2>
+                    <form method="post" >
+                          
+                        <div class="form-group">
+                            <label for="class">Class</label>
+                            <input type="text" class="form-control" id="class" name = "class" placeholder="7" required>
+                          </div>
+                        <div class="form-group">
+                            <label for="Subject">Subject</label>
+                            <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math" required>
+                        </div>
+                        
+                          <div class="form-group">
+                            <label for="monday">Monday</label>
+                            <select class="form-control" id="monday" name = "monday">
+                              <option>No work</option>
+                              {% for resource in resource_list %}
+                              <option>{{ resource.name }}</option>
+                              {% endfor %}
+                            </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="tuesday">Tuesday</label>
+                              <select class="form-control" id="tuesday" name = "tuesday">
+                                <option>No work</option>
+                                {% for resource in resource_list %}
+                                <option>{{ resource.name }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="wednesday">Wednesday</label>
+                              <select class="form-control" id="wednesday" name = "wednesday">
+                                <option>No work</option>
+                                {% for resource in resource_list %}
+                                <option>{{ resource.name }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="thursday">Thursday</label>
+                              <select class="form-control" id="thursday" name = "thursday">
+                                <option>No work</option>
+                                {% for resource in resource_list %}
+                                <option>{{ resource.name }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="friday">Friday</label>
+                              <select class="form-control" id="friday" name = "friday">
+                                <option>No work</option>
+                                {% for resource in resource_list %}
+                                <option>{{ resource.name }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class="form-group">
+                              <label for="saturday">Saturday</label>
+                              <select class="form-control" id="saturday" name = "saturday">
+                                <option>No work</option>
+                                {% for resource in resource_list %}
+                                <option>{{ resource.name }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Add Weekly Agenda</button>
+                     
+                        <!-- <div class="form-group">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                        </div> -->
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+    
+{% endblock %}
