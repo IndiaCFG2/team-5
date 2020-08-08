@@ -3,6 +3,6 @@ from django.http import HttpResponse
 
 # Create your views here.
 def homepage(request):
-    return render(request, 'HomePage.html')
+    return render(request, 'DashBoardFaculty.html')
 def loginS(request):
     return render(request, 'login.html')    
