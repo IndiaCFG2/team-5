@@ -26,124 +26,224 @@
                     {% endfor %}</li>
           </ul> -->
 
-            <div class="form-group">
-            <h5> List of Student enrolled </h5>
-            <!-- <label for="student_list"> List of Student enrolled </label> -->
-            <select multiple class="form-control" id="student_list">
-              {% for student in student_list %}
-                <option>{{ student.name }}</option>
-              {% endfor %} 
-            </select>
-          </div>
 
-        <!-- <div class="form-group">
-            <label for="exampleFormControlSelect1">Student List</label>
-            <select class="form-control" id="monday" name = "monday">
-              <option>No work</option>
-              {% for student in student_list %}
-              <option>{{ student.name }}</option>
-              {% endfor %}
-            </select>
-        </div> -->
-
-        <h5>Add a Student</h5>
-        <form action="class.html" method="post" >
-            <div class="form-group">
-                <label for="student_name">Student Name</label>
-                <input type="text" class="form-control" id="student_name" name = "student_name" >
-              </div>
-              <div class="form-group">
-                <label for="roll_no">Roll No</label>
-                <input type="text" class="form-control" id="roll_no" name = "roll_no" >
-              </div>
-              <div class="form-group">
-                <label for="mobile">Mobile</label>
-                <input type="text" class="form-control" id="Mobile" name = "mobile" >
-              </div>
-            <button type="submit" class="btn btn-primary"> Add Student </button>
-          </form>
-        
-         
-        <h5>Delete Student</h5>
-        <form action = "class.html" method="post" >
-            <div class="form-group">
-                <label for="roll_no">Roll No.</label>
-                <input type="text" class="form-control" id="roll_no" name = "roll_no" placeholder="1" >
-              </div>
-            <button type="submit" class="btn btn-primary"> Delete Student </button>
-          </form>
-        
-
-
-<!-- 
-        <h5>Weekly Agenda</h5>
-
-        <form action="" method="post">
-            <label for="class">Class: </label>
-            <input id="class" type="text" name="class" value="{{ class }}">
-            <label for="subject">Subject: </label>
-            <input id="subject" type="text" name="subject" value="{{ subject }}">
-            <label for="Topic">Topic: </label>
-            <input id="Topic" type="text" name="Topic" value="{{ topic }}">
-            <input type="button" class="button_active"  /> -->
-            <!-- <input type="button" value="Manage Weekly Agenda" onclick="location.href='weekly_agenda.html';"> -->
-        <!-- </form> --> 
-        
-        <h5>Weekly Agenda</h5>
-        <form action = "weekly_agenda.html" method="post" >
-            <div class="form-group">
-                <label for="class">Class</label>
-                <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
-              </div>
-            <div class="form-group">
-                <label for="Subject">Subject</label>
-                <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
-            </div>
-            <button type="submit" class="btn btn-primary"> Manage Weekly Agenda </button>
-          </form>
-
-
-        <h5>Upload Content</h5>
-        <form action = "class.html" method="post" >
-            <div class="form-group">
-                <label for="class">Class</label>
-                <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
-              </div>
-            <div class="form-group">
-                <label for="Subject">Subject</label>
-                <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
-            </div>
-            <div class="form-group">
-                <label for="Topic">Topic</label>
-                <input type="text" class="form-control" id="topic" name = "topic" placeholder="Algebra">
-              </div>
-            <div class="form-group">
-              <label for="file">Select file</label>
-              <input type="file" class="form-control-file" id="file" name = "file">
-            </div>
-            <button type="submit" class="btn btn-primary">Upload Content</button>
-          </form>
-
-          <h5>Add Assignments</h5>
-        <form action = "class.html" method="post" >
-            <div class="form-group">
-                <label for="class">Class</label>
-                <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
-              </div>
-            <div class="form-group">
-                <label for="Subject">Subject</label>
-                <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
-            </div>
-            <div class="form-group">
-              <label for="file">Select file(.pdf or .docs)</label>
-              <input type="file" class="form-control-file" id="file" name = "file">
-            </div>
-            <button type="submit" class="btn btn-primary">Upload Assignments</button>
-        </form>
 
         <button class="feedback" onclick="location.href='teacher_dashboard.html';">Back to Dashboard</button>
 
+<!--Accordion wrapper-->
+<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
+    <!-- Accordion card -->
+    <div class="card">
+  
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="headingOne1">
+        <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+          aria-controls="collapseOne1">
+          <h5 class="mb-0">
+            List of Students Enrolled <i class="fas fa-angle-down rotate-icon"></i>
+          </h5>
+        </a>
+      </div>
+  
+      <!-- Card body -->
+      <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+        data-parent="#accordionEx">
+        <div class="card-body">
+            <div class="form-group">
+                <!-- <h5> List of Student enrolled </h5> -->
+                <!-- <label for="student_list"> List of Student enrolled </label> -->
+                <select multiple class="form-control" id="student_list">
+                  {% for student in student_list %}
+                    <option>{{ student.name }}</option>
+                  {% endfor %} 
+                </select>
+              </div>
+            </div>
+      </div>
+  
+    </div>
+    <!-- Accordion card -->
+  
+    <!-- Accordion card -->
+    <div class="card">
+  
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="headingTwo2">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+          aria-expanded="false" aria-controls="collapseTwo2">
+          <h5 class="mb-0">
+            Add or Delete a Student <i class="fas fa-angle-down rotate-icon"></i>
+          </h5>
+        </a>
+      </div>
+  
+      <!-- Card body -->
+      <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+        data-parent="#accordionEx">
+        <div class="card-body">
+            <h5>Add a Student</h5>
+            <form action="class.html" method="post" >
+                <div class="form-group">
+                    <label for="student_name">Student Name</label>
+                    <input type="text" class="form-control" id="student_name" name = "student_name" >
+                  </div>
+                  <div class="form-group">
+                    <label for="roll_no">Roll No</label>
+                    <input type="text" class="form-control" id="roll_no" name = "roll_no" >
+                  </div>
+                  <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" class="form-control" id="Mobile" name = "mobile" >
+                  </div>
+                <button type="submit" class="btn btn-primary"> Add Student </button>
+              </form>
+            
+             
+            <h5>Delete Student</h5>
+            <form action = "class.html" method="post" >
+                <div class="form-group">
+                    <div class="form-group">
+                        <select class="form-control" id="student" name = "student">
+                            {% for student in student_list %}
+                            <option>{{ student.name }}</option>
+                            {% endfor %} 
+                        </select>
+                      </div>
+                  </div>
+                <button type="submit" class="btn btn-primary"> Delete Student </button>
+              </form>
+        </div>
+      </div>
+  
+    </div>
+    <!-- Accordion card -->
+  
+    <!-- Accordion card -->
+    <div class="card">
+  
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="headingThree3">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+          aria-expanded="false" aria-controls="collapseThree3">
+          <h5 class="mb-0">
+            Manage Weekly Agenda <i class="fas fa-angle-down rotate-icon"></i>
+          </h5>
+        </a>
+      </div>
+  
+      <!-- Card body -->
+      <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+        data-parent="#accordionEx">
+        <div class="card-body">
+            <!-- <h5>Weekly Agenda</h5> -->
+            <form action = "weekly_agenda.html" method="post" >
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
+                  </div>
+                <div class="form-group">
+                    <label for="Subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
+                </div>
+                <button type="submit" class="btn btn-primary"> Manage Weekly Agenda </button>
+            </form>
+        </div>
+      </div>
+  
+    </div>
+    <!-- Accordion card -->
+        <!-- Accordion card -->
+        <div class="card">
+  
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingThree4">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree4"
+                aria-expanded="false" aria-controls="collapseThree4">
+                <h5 class="mb-0">
+                  Upload Content <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+        
+            <!-- Card body -->
+            <div id="collapseThree4" class="collapse" role="tabpanel" aria-labelledby="headingThree4"
+              data-parent="#accordionEx">
+              <div class="card-body">
+                <!-- <h5>Upload Content</h5> -->
+                <form action = "class.html" method="post" >
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
+                      </div>
+                    <div class="form-group">
+                        <label for="Subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
+                    </div>
+                    <div class="form-group">
+                        <label for="Topic">Topic</label>
+                        <input type="text" class="form-control" id="topic" name = "topic" placeholder="Algebra">
+                      </div>
+                    <div class="form-group">
+                      <label for="file">Select file</label>
+                      <input type="file" class="form-control-file" id="file" name = "file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload Content</button>
+                  </form>
+              </div>
+            </div>
+        
+          </div>
+
+          <div class="card">
+  
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingThree5">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree5"
+                aria-expanded="false" aria-controls="collapseThree5">
+                <h5 class="mb-0">
+                  Upload Assignments <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+        
+            <!-- Card body -->
+            <div id="collapseThree5" class="collapse" role="tabpanel" aria-labelledby="headingThree5"
+              data-parent="#accordionEx">
+              <div class="card-body">
+                <!-- <h5>Add Assignments</h5> -->
+                <form action = "class.html" method="post" >
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <input type="text" class="form-control" id="class" name = "class" placeholder="7" >
+                      </div>
+                    <div class="form-group">
+                        <label for="Subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" name = "subject" placeholder="Math">
+                    </div>
+                    <div class="form-group">
+                      <label for="file">Select file(.pdf or .docs)</label>
+                      <input type="file" class="form-control-file" id="file" name = "file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload Assignments</button>
+                </form>
+              </div>
+            </div>
+        
+          </div>
+  
+  </div>
+  <!-- Accordion wrapper -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+        
 
 
 
