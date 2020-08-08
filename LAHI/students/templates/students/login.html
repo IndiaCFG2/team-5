@@ -1,0 +1,15 @@
+{% load static %}
+
+<head>
+        <meta charset="utf-8">
+        <title>Djangonauts</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" value="Login">Submit</button>
+	</form>
+{% endblock %}
