@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <!-- <div> -->
 	<!-- <label for="content_type">Content Type</label>
                               <select class="form-control content-type" id="content" name = "content">
@@ -9,10 +10,9 @@
 								<option>image</option>
                              </select> -->
 <!-- </div> -->
+
 <div class="row">
 	{% for m in media %}
-	<!-- {% if m.file_type == content %} -->
-
 		<div class="col-sm-4">
 			<video width="320" height="240" controls>
 				<source src="/media/{{m.media}}" type="video/mp4">
@@ -29,8 +29,7 @@
 				{% csrf_token %}
 				<button class="btn-primary" type="submit">Download</button>
 			</form>
-		</div>
-		<!-- {% endif %} -->
+        </div>
 	{% endfor %}
 </div>
 {% endblock %}
