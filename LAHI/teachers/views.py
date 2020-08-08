@@ -19,5 +19,3 @@ def teacher_login(request):
     return render(request, 'teachers/login.html', { 'form': form })
     # return HttpResponse("teacher login")
 
-def create_student(request):
-    
