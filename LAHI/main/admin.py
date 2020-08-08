@@ -3,3 +3,4 @@ from .models import *
 
 admin.site.register(Teacher)
 admin.site.register(Standard)
+admin.site.register(MediaFile)

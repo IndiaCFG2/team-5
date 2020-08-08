@@ -16,3 +16,11 @@ class Standard(models.Model):
     def __str__(self):
         return str(self.standard)
 
+class MediaFile(models.Model):
+    title = models.CharField(max_length=200)
+    file_type = models.CharField(max_length=10)
+    media = models.FileField(upload_to='', null=True, verbose_name="")
+
+    def __str__(self):
+        return self.title
+
