@@ -2,3 +2,6 @@
 /main/__pycache__
 /teachers/__pycache__
 /students/__pycache__
+/main/migrations/__pycache__
+/teachers/migrations/__pycache__
+/students/migrations/__pycache__
