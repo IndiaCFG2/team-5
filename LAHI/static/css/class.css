@@ -1,6 +1,9 @@
+.student-value{
+  width: 50%;
+
+}
 .form-control {
     display: block;
-    width: 50%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -15,6 +18,7 @@
     margin-left: 25%;
     margin-right: 25%;
 }
+
 
 label {
     display: inline-block;
@@ -138,6 +142,21 @@ height: 400;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+select {
+  text-transform: none;
+  margin-bottom: 50px;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  margin-bottom: 10px;
 }
 
 .list-group {

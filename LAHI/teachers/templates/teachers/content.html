@@ -2,25 +2,35 @@
 
 {% block content %}
 
+<!-- <div> -->
+	<!-- <label for="content_type">Content Type</label>
+                              <select class="form-control content-type" id="content" name = "content">
+								<option>video</option>
+								<option>audio</option>
+								<option>image</option>
+                             </select> -->
+<!-- </div> -->
+
 <div class="row">
 	{% for m in media %}
 		<div class="col-sm-4">
-			<video width="320" height="240" controls>
-				<source src="/media/{{m.media}}" type="video/mp4">
-			</video>
-			
-			<!-- <audio controls>
-				<source src="/media/{{m.media}}" type="audio/ogg">
-			</audio> -->
 
-			<h3>{{ m.subject }}</h3>
-			<p>{{ m.std }}</p>
-			<p>{{ m.file_type }}</p>
-			<form action="{% url 'main:download' m.media %}" method="post">
-				{% csrf_token %}
-				<button class="btn-primary" type="submit">Download</button>
-			</form>
-			<a href="https://web.whatsapp.com/send?text=http://webdevelopmentscripts.com">Share on whatsapp</a>
+				<video width="320" height="240" controls>
+					<source src="/media/{{m.media}}" type="video/mp4">
+				</video>
+				
+				<!-- <audio controls>
+					<source src="/media/{{m.media}}" type="audio/ogg">
+				</audio> -->
+	
+				<h3> Subject : {{ m.subject }}</h3>
+				<p>  Standard : {{ m.std }}</p>
+				<p>  File Type : {{ m.file_type }}</p>
+				<form action="{% url 'main:download' m.media %}" method="post">
+					{% csrf_token %}
+					<button class="btn-primary" type="submit">Download</button>
+				</form>
+				
         </div>
 	{% endfor %}
 </div>
