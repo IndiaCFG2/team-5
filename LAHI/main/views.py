@@ -9,9 +9,10 @@ def homepage(request):
     return render(request, 'main/homepage.html')  
 
 def download(request, filename):
-    fl_path = '/media/'
+    fl_path = 'media/'
+    print(filename)
     filename = filename
-    fl = open(fl_path, 'r')
+    fl = open(fl_path+filename, 'rb')
     mime_type, _ = mimetypes.guess_type(fl_path)
     response = HttpResponse(fl, content_type=mime_type)
     response['Content-Disposition'] = "attachment; filename=%s" % filename
