@@ -5,10 +5,12 @@
       </div>
       
       <ul class="nav navbar-nav navbar-right">
-       
-        <li><a href="loginS"><span class="glyphicon glyphicon-log-in"></span>Student Login</a></li>
-        <li><a href="loginf"><span class="glyphicon glyphicon-log-in"></span>Faculty Login</a></li>
-  
+      {% if user.is_authenticated %}
+        <li><a href="#"><div class="flex"><form action="{% url 'main:logout' %}" method="post">{% csrf_token %}<button type="submit">Logout</button></form></div></a></li>
+      {% else %}
+        <li><a href="{%url 'students:student_login' %}"><span class="glyphicon glyphicon-log-in"></span>Student Login</a></li>
+        <li><a href="{% url 'teachers:teacher_login' %}"><span class="glyphicon glyphicon-log-in"></span>Faculty Login</a></li>
+      {% endif %}
       </ul>
     </div>
 </nav>

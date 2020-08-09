@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import MediaFile
 import mimetypes
+from django.contrib.auth import logout
 
 # Create your views here.
 def homepage(request):
@@ -15,4 +16,9 @@ def download(request, filename):
     response = HttpResponse(fl, content_type=mime_type)
     response['Content-Disposition'] = "attachment; filename=%s" % filename
     return response
+
+def logout_view(request):
+    if request.method == 'POST':
+	    logout(request)
+	    return redirect('main:homepage')
 
