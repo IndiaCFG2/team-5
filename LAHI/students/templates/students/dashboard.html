@@ -2,12 +2,12 @@
 
 {% block content %}
     <center>
-    <h1>Welcome Student Name</h1>
+    <h1>Welcome {{request.user}}</h1>
     <br>
     <br>
-<div class="container">
+  <div class="container">
   <div class="card bg-info text-white">
-    <a href="#"><div class="card-body"><center><h1>Weekly-Schedule</h1></center></div></a>
+    <a href="{% url 'students:agenda' %}"><div class="card-body"><center><h1>Weekly-Schedule</h1></center></div></a>
   </div>
   <br>
   <div class="card bg-info text-white">

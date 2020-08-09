@@ -3,6 +3,7 @@
 {% block content %}
 
 <div class="row">
+    
 	{% for m in media %}
 		<div class="col-sm-4">
 			<video width="320" height="240" controls>
@@ -20,7 +21,6 @@
 				{% csrf_token %}
 				<button class="btn-primary" type="submit">Download</button>
 			</form>
-			<a href="https://web.whatsapp.com/send?text=http://webdevelopmentscripts.com">Share on whatsapp</a>
         </div>
 	{% endfor %}
 </div>

@@ -11,11 +11,11 @@ def teacher_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            if 'next' in request.POST:
-                return redirect(request.POST.get('next'))
-            else:
-                # return redirect('articles:list')
-                return HttpResponse('You are logged in')
+            # if 'next' in request.POST:
+            #     return redirect(request.POST.get('next'))
+            # else:
+            return redirect('teachers:dashboard')
+                
     else:
         form = AuthenticationForm()
     return render(request, 'teachers/login.html', { 'form': form })
@@ -56,3 +56,9 @@ def create_student(request):
     
     return render(request, 'teachers/createstudent.html')
         # return HttpResponse("create a new user")
+
+def dashboard(request):
+    return render(request, 'teachers/dashboard.html')
+
+def agenda(request):
+    return render(request, 'teachers/agenda.html')
