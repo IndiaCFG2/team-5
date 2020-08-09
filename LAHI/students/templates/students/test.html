@@ -19,8 +19,12 @@
 			<p>{{ m.file_type }}</p>
 			<form action="{% url 'main:download' m.media %}" method="post">
 				{% csrf_token %}
-				<button class="btn-primary" type="submit">Download</button>
+				<button type="submit">
+					download
+				</button>
 			</form>
+			<!-- <a href="{{ m.media.url }}" download>Download</a> -->
+			<a href="https://web.whatsapp.com/send?text={{request.META.HTTP_HOST}}/download/{{m.media}}">Share on whatsapp</a>
         </div>
 	{% endfor %}
 </div>
