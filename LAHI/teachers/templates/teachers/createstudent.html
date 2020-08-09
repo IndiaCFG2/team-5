@@ -15,35 +15,42 @@
         <input type="text" name="std" placeholder="Class">
         <button type="submit">Submit</button>
     </form> -->
+    <br><center><h1><b>Add Student to the class!!!</b></h1></center>
+    <br><br><br><br>
     <div class="card-body">
         <!-- <h5>Add Assignments</h5> -->
         <form action ="{% url 'teachers:create_student' %}" method="post" >
             {% csrf_token %}
             <div class="form-group">
-                <label for="Username">Username</label>
-                <input type="text" class="form-control student-value" id="class" name = "uname" placeholder="Username" required>
+                <label for="Username" style="margin-left:18%">Username</label>
+                <input type="text" style="width:60% ; margin-left:18%" class="form-control student-value" id="class" name = "uname" placeholder="Username" required>
               </div>
             <div class="form-group">
+<<<<<<< HEAD
+                <label for="Password" style="margin-left:18%">Password</label>
+                <input type="password" style="width:60% ; margin-left:18%" class="form-control" id="password" name = "password" placeholder="Password" required>
+=======
                 <label for="Password">Password</label>
                 <input type="password" class="form-control" id="password" name = "pass" placeholder="Password" required>
+>>>>>>> 6ee8338b8e0759e15ff94347d0c00f7a9e212c37
             </div>
             <div class="form-group">
-                <label for="confirm">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm password" name = "passagain" placeholder=" Confirm Password" required>
+                <label for="confirm" style="margin-left:18%">Confirm Password</label>
+                <input type="password" style="width:60% ; margin-left:18%" class="form-control" id="confirm password" name = "passagain" placeholder=" Confirm Password" required>
             </div>
 
             <div class="form-group ">
-                <label for="rollno">Roll No.</label>
-                <input type="number" class="form-control" id="rollno" name = "rollno" placeholder="Roll Number" required>
+                <label for="rollno" style="margin-left:18%">Roll No.</label>
+                <input type="number" style="width:60% ; margin-left:18%" class="form-control" id="rollno" name = "rollno" placeholder="Roll Number" required>
             </div>
 
             <div class="form-group mx-sm-3 mb-2">
-                <label for="phone">Phone</label>
-                <input type="number" class="form-control" id="phone" name = "phone" placeholder="Phone" required>
+                <label for="phone" style="margin-left:18%">Phone</label>
+                <input type="number" style="width:60% ; margin-left:18%" class="form-control" id="phone" name = "phone" placeholder="Phone" required>
             </div>
             <div class="form-group">
-                <label for="text">Class</label>
-                <input type="text" class="form-control" id="class" name = "std" placeholder="Class" required>
+                <label for="text" style="margin-left:18%">Class</label>
+                <input type="text" style="width:60% ; margin-left:18%" class="form-control" id="class" name = "std" placeholder="Class" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Add Student</button>

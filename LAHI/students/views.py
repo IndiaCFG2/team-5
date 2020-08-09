@@ -33,4 +33,9 @@ def dashboard(request):
 
 def agenda(request):
     return render(request, 'students/agenda.html')
+
+def feedback(request):
+    return render(request, 'students/feedback.html')    
  
+def content(request):
+    return render(request, 'students/feedback.html') 
